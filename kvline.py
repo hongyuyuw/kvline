@@ -16,3 +16,12 @@ def parse_kv(text: str) -> dict[str, str]:
             raise ValueError("键为空")
         out[key] = value.strip()
     return out
+
+
+def emit_kv(data: dict[str, str]) -> str:
+    lines = []
+    for key, value in data.items():
+        if not str(key).strip() or ":" in str(key):
+            raise ValueError(f"键不合法: {key}")
+        lines.append(f"{key}: {value}")
+    return "\n".join(lines) + ("\n" if lines else "")
