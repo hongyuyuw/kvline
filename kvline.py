@@ -18,6 +18,10 @@ def parse_kv(text: str) -> dict[str, str]:
     return out
 
 
+def get_value(data: dict[str, str], key: str, default: str = "") -> str:
+    return data.get(key, default)
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
