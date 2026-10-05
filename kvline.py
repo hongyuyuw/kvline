@@ -22,6 +22,10 @@ def get_value(data: dict[str, str], key: str, default: str = "") -> str:
     return data.get(key, default)
 
 
+def key_names(text: str) -> list[str]:
+    return list(parse_kv(text))
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
