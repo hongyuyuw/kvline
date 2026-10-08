@@ -1,6 +1,6 @@
 import unittest
 
-from kvline import emit_kv, get_value, key_names, parse_kv
+from kvline import emit_kv, get_value, has_key, key_names, parse_kv
 
 
 class KvlineTest(unittest.TestCase):
@@ -14,6 +14,8 @@ class KvlineTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             parse_kv("nope\n")
         self.assertEqual(key_names("name: Ada\n# x\ncity: GZ\n"), ["name", "city"])
+        self.assertTrue(has_key("name: Ada\n", "name"))
+        self.assertFalse(has_key("name: Ada\n", "city"))
 
 
 if __name__ == "__main__":
