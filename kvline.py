@@ -26,6 +26,10 @@ def key_names(text: str) -> list[str]:
     return list(parse_kv(text))
 
 
+def has_key(text: str, key: str) -> bool:
+    return key in parse_kv(text)
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
