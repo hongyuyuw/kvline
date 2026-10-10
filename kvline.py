@@ -30,6 +30,10 @@ def has_key(text: str, key: str) -> bool:
     return key in parse_kv(text)
 
 
+def pair_count(text: str) -> int:
+    return len(parse_kv(text))
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
