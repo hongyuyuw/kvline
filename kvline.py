@@ -34,6 +34,10 @@ def pair_count(text: str) -> int:
     return len(parse_kv(text))
 
 
+def blank_keys(text: str) -> list[str]:
+    return [key for key, value in parse_kv(text).items() if value == ""]
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
