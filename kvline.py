@@ -42,6 +42,13 @@ def filled_keys(text: str) -> list[str]:
     return [key for key, value in parse_kv(text).items() if value != ""]
 
 
+def same_value(text: str, left: str, right: str) -> bool:
+    data = parse_kv(text)
+    if left not in data or right not in data:
+        return False
+    return data[left] == data[right]
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
