@@ -49,6 +49,10 @@ def same_value(text: str, left: str, right: str) -> bool:
     return data[left] == data[right]
 
 
+def blank_count(text: str) -> int:
+    return len(blank_keys(text))
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
