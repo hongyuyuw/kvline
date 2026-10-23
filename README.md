@@ -3,7 +3,7 @@
 Parse lines of the form `key: value`. Comments start with `#`. This is not an `.env` parser: the separator is a colon.
 
 ```python
-from kvline import parse_kv, emit_kv, get_value, key_names, has_key, pair_count, blank_keys, filled_keys, same_value, blank_count
+from kvline import parse_kv, emit_kv, get_value, key_names, has_key, pair_count, blank_keys, filled_keys, same_value, blank_count, filled_count
 
 parse_kv("name: Ada\n")
 emit_kv({"name": "Ada"})
