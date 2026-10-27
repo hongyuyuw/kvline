@@ -57,6 +57,10 @@ def filled_count(text: str) -> int:
     return len(filled_keys(text))
 
 
+def more_blank(text: str) -> bool:
+    return blank_count(text) > filled_count(text)
+
+
 def emit_kv(data: dict[str, str]) -> str:
     lines = []
     for key, value in data.items():
