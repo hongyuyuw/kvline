@@ -68,3 +68,6 @@ def emit_kv(data: dict[str, str]) -> str:
             raise ValueError(f"键不合法: {key}")
         lines.append(f"{key}: {value}")
     return "\n".join(lines) + ("\n" if lines else "")
+
+def more_filled(text: str) -> bool:
+    return filled_count(text) > blank_count(text)
