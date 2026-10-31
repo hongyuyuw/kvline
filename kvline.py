@@ -71,3 +71,6 @@ def emit_kv(data: dict[str, str]) -> str:
 
 def more_filled(text: str) -> bool:
     return filled_count(text) > blank_count(text)
+
+def balanced(text: str) -> bool:
+    return pair_count(text) > 0 and filled_count(text) == blank_count(text)
