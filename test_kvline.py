@@ -1,6 +1,6 @@
 import unittest
 
-from kvline import blank_count, blank_keys, emit_kv, filled_count, filled_keys, get_value, has_key, key_names, more_blank, pair_count, parse_kv, same_value, more_filled
+from kvline import blank_count, blank_keys, emit_kv, filled_count, filled_keys, get_value, has_key, key_names, more_blank, pair_count, parse_kv, same_value, more_filled, balanced
 
 
 class KvlineTest(unittest.TestCase):
@@ -29,6 +29,9 @@ class KvlineTest(unittest.TestCase):
 
         self.assertTrue(more_filled("name: Ada\ncity: NYC\nnote:\n"))
         self.assertFalse(more_filled("name:\ncity:\nrole: dev\n"))
+
+        self.assertTrue(balanced("name: Ada\ncity:\n"))
+        self.assertFalse(balanced("name:\ncity:\nrole: dev\n"))
 
 if __name__ == "__main__":
     unittest.main()
